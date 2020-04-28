@@ -1,0 +1,6 @@
+{
+    "require": {
+        "danielsonsilva/diceroller": "^1.0",
+        "codeigniter4/framework": "^4.0"
+    }
+}
