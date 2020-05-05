@@ -17,7 +17,7 @@ class DiceRollerController extends BaseController
 	public function index()
 	{
 	    $this->diceRoller = new DiceRoller();
-	    //$this->saveDiceRollerState($this->diceRoller);
+	    $this->saveDiceRollerState();
 		return view('diceroller');
 	}
 
@@ -26,11 +26,11 @@ class DiceRollerController extends BaseController
         $valueReceived = $this->request->getVar("value");
         $data = [];
         if ($this->validateDie($valueReceived)) {
-            $this->response->setStatusCode(200);
-            //$this->loadDiceRollerState();
+            $this->loadDiceRollerState();
             $this->diceRoller->addDice(1, $valueReceived);
-            $data["current_roll"] = strval($this->diceRoller);
-            //$this->saveDiceRollerState();
+            $data["current_roll"] = "Current roll: " . strval($this->diceRoller);
+            $this->saveDiceRollerState();
+            $this->response->setStatusCode(200);
         } else {
             // Bad Request
             $this->response->setStatusCode(400);
@@ -50,12 +50,12 @@ class DiceRollerController extends BaseController
 
     private function saveDiceRollerState()
     {
-        set_cookie('diceRoller', serialize($this->diceRoller));
+        $this->session->set('diceRoller', $this->diceRoller);
     }
 
-    private function loadDiceRollerState(): DiceRoller
+    private function loadDiceRollerState()
     {
-        $this->diceRoller = unserialize(get_cookie('diceRoller'));
+        $this->diceRoller = $this->session->get('diceRoller');
     }
 
 }

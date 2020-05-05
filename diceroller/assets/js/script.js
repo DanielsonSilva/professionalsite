@@ -8,7 +8,7 @@ $(document).ready(function(){
             data: {value: die},
             dataType: 'json',
             success: function(response){
-                $("#current-roll").text(response[0].current_roll);
+                $("#current-roll").text(response.current_roll);
             },
             error: function(response) {
                 $("#current-roll").html(response.responseJSON.message);
