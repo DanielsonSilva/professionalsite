@@ -1,9 +1,8 @@
 $(document).ready(function(){
     $("button[name='die']").click(function(){
         let die = $(this).val();
-        alert(die);
         $.ajax({
-            url:'professionalsite/diceroller/index.php/DiceRollerController/addDice',
+            url: baseURL + '/index.php/DiceRollerController/addDice',
             method: 'post',
             data: {value: die},
             dataType: 'json',
@@ -11,34 +10,37 @@ $(document).ready(function(){
                 $("#current-roll").text(response.current_roll);
             },
             error: function(response) {
-                $("#current-roll").html(response.responseJSON.message);
+                $("#current-roll").text(response.message);
+            }
+        });
+    });
+    $("button[name='roll']").click(function(){
+        $.ajax({
+            url: baseURL + '/index.php/DiceRollerController/rollDice',
+            method: 'post',
+            dataType: 'json',
+            success: function(response){
+                $("#roll-result").text(response.message);
+                alert("The result of that roll was " + response.value);
+            },
+            error: function(response) {
+                $("#roll-result").text(response.message);
+            }
+        });
+    });
+    $("button[name='reset']").click(function(){
+        $.ajax({
+            url: baseURL + '/index.php/DiceRollerController/resetDice',
+            method: 'post',
+            dataType: 'json',
+            success: function(response){
+                $("#current-roll").text("");
+                $("#roll-result").text("");
+                alert("The roll was reset");
+            },
+            error: function(response) {
+                $("#roll-result").text("Something bad happened, please try again");
             }
         });
     });
 });
-
-/*let dice = {
-    4 : 0,
-    6 : 0,
-    8 : 0,
-    10: 0,
-    12: 0,
-    20: 0
-}
-
-function addDice(number) {
-    dice[number] = dice[number] + 1;
-    printDice();
-}
-
-function printDice() {
-    let i;
-    let text = "Current roll: ";
-    for(let key in dice) {
-        let value = dice[key];
-        if (value > 0) {
-            text = text + value + "d" + key + " + ";
-        }
-    }
-    document.getElementById("current-roll").innerText = text.substring(0, text.length - 3);
-}*/

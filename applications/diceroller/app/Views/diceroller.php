@@ -19,6 +19,9 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/common.css") ?>" />
 
     <!-- JAVASCRIPT SCRIPT -->
+    <script type="text/javascript">
+        var baseURL= "<?php echo base_url();?>";
+    </script>
     <script type='text/javascript' src='<?= base_url("assets/js/script.js") ?>'></script>
 </head>
 <body>
@@ -42,19 +45,23 @@
     <button type="button" class="btn btn-dark" name="die" value="12">d12</button>
     <button type="button" class="btn btn-dark" name="die" value="20">d20</button>
 
+    <button type="button" class="btn btn-danger" name="reset">Reset</button>
+
     <br />
 
     <span id="current-roll"></span>
 
     <br />
 
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" name="roll">
         Roll that dice!
     </button>
 
     <br />
 
     <span id="roll-result"></span>
+
+    <br />
 
 </section>
 
