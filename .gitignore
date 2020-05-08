@@ -1,4 +1,8 @@
-/vendor/
+# Packages unecessary in production
+/vendor/bin/
+/vendor/psr/
+
+# Common ignores
 /.idea/
 composer.lock
 .phpunit.result.cache
