@@ -12,7 +12,7 @@ class DiceRollerController extends BaseController
     /**
      * @var DiceRoller The dice roller object to roll dice
      */
-    private DiceRoller $diceRoller;
+    private $diceRoller;
 
     /**
      * Initiate a new diceRoller

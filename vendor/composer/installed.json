@@ -47,25 +47,28 @@
     },
     {
         "name": "danielsonsilva/diceroller",
-        "version": "v1.2.0",
-        "version_normalized": "1.2.0.0",
+        "version": "v1.3.0",
+        "version_normalized": "1.3.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/DanielsonSilva/diceroller.git",
-            "reference": "c9397b83073c55e06f18ff3cac96c5de18c937bb"
+            "reference": "e167b08a498e4bde5600a11f3d3e01e898abc0f7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/DanielsonSilva/diceroller/zipball/c9397b83073c55e06f18ff3cac96c5de18c937bb",
-            "reference": "c9397b83073c55e06f18ff3cac96c5de18c937bb",
+            "url": "https://api.github.com/repos/DanielsonSilva/diceroller/zipball/e167b08a498e4bde5600a11f3d3e01e898abc0f7",
+            "reference": "e167b08a498e4bde5600a11f3d3e01e898abc0f7",
             "shasum": ""
+        },
+        "require": {
+            "php": "7.3.17"
         },
         "require-dev": {
             "phan/phan": "^2.7",
             "phpunit/phpunit": "^9.1",
             "squizlabs/php_codesniffer": "^3.5"
         },
-        "time": "2020-05-06T22:20:59+00:00",
+        "time": "2020-05-11T23:38:16+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
