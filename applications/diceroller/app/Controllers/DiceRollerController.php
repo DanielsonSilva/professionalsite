@@ -1,7 +1,8 @@
 <?php
 namespace App\Controllers;
 
-require_once(__DIR__ . '/../../../../vendor/autoload.php');
+require_once(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..'
+    . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
 
 use CodeIgniter\HTTP\RequestInterface;
 use phpDocumentor\Reflection\Types\Boolean;
