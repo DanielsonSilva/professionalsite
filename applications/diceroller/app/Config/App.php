@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost/professionalsite/diceroller/';
+	public $baseURL = 'http://danielsonsilva.tech/diceroller/';
 
 	/*
 	|--------------------------------------------------------------------------
