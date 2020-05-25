@@ -1,10 +1,13 @@
 # Packages unecessary in production
 /vendor/bin/
 /vendor/psr/
-
+/vendor/
 # Common ignores
 /.idea/
 composer.lock
 .phpunit.result.cache
 /applications/diceroller/writable/
 /applications/diceroller/.env
+/.settings/
+.buildpath
+.project
