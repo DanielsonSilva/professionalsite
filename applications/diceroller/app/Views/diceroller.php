@@ -71,7 +71,7 @@
 	<div class="copyrights">
 
 		<p>
-            <?= date('Y') ?> - Danielson Fl&aacute;vio Xavier da Silva <br />
+            <?= date('Y') ?> - Danielson Silva <br />
             <a href="https://github.com/DanielsonSilva" target="_blank">GitHub</a> <br />
             <a href="https://packagist.org/users/DanielsonSilva/packages/" target="_blank">Packagist</a> <br />
             <a href="https://www.linkedin.com/in/danielson-silva/" target="_blank">LinkedIn</a> <br />

@@ -58,7 +58,7 @@ class DiceRollerController extends BaseController
         $this->loadDiceRollerState();
         if (!$this->diceRoller->isEmpty()) {
             $result = $this->diceRoller->roll();
-            $data['message'] = "Dice result: " . $result;
+            $data['message'] = "Dice result: " . $result . " (" . $this->diceRoller->getResultString() . ")";
             $data['value'] = $result;
             $this->response->setStatusCode(200);
         } else {
