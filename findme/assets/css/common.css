@@ -1,0 +1,10 @@
+#footer {
+    justify-content: center | flex-start | flex-end | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+	margin: 0 auto;
+	background-color: ghostwhite;
+	text-align: center;
+	padding-right: 0;
+    padding-left: 0;
+	margin-right: auto;
+    margin-left: auto;
+}

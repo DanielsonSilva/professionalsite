@@ -2,6 +2,7 @@
     "require": {
         "php": "7.3.17",
         "danielsonsilva/diceroller": "^1.3",
-        "codeigniter4/framework": "^4.0"
+        "codeigniter4/framework": "^4.0",
+        "danielsonsilva/findme": "^1.0"
     }
 }

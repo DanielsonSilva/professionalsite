@@ -8,6 +8,7 @@ composer.lock
 .phpunit.result.cache
 /applications/diceroller/writable/
 /applications/diceroller/.env
+/applications/findme/.env
 /.settings/
 .buildpath
 .project
