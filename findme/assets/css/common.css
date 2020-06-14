@@ -1,10 +1,40 @@
 #footer {
     justify-content: center | flex-start | flex-end | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
 	margin: 0 auto;
-	background-color: ghostwhite;
 	text-align: center;
-	padding-right: 0;
-    padding-left: 0;
+	padding: 10px;
 	margin-right: auto;
     margin-left: auto;
+}
+
+#labelSelect {
+	text-align: right;
+    padding-right: 20;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#citySelect {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 20;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#content {
+	padding: 20px;
+    margin: 0px;
+	background-color: #E0DCE8;
+}
+
+.form-control-sm {
+    min-width: 0;
+    width: auto;
+    display: inline;
+}
+
+#confirm-button {
+	padding: 10px;
 }

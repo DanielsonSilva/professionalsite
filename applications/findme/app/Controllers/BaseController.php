@@ -33,10 +33,11 @@ class BaseController extends Controller
 	 */
 	public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
 	{
+	    $this->helpers = array_merge($this->helpers, ['url', 'form', 'html']);
+	    $this->session = \Config\Services::session();
+	    
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
-
-		$this->session = \Config\Services::session();
 	}
 
 }

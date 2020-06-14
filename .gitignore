@@ -9,6 +9,7 @@ composer.lock
 /applications/diceroller/writable/
 /applications/diceroller/.env
 /applications/findme/.env
+/applications/findme/writable/*
 /.settings/
 .buildpath
 .project
