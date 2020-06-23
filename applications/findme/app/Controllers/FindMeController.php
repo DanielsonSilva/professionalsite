@@ -5,10 +5,13 @@ require_once(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' .
     . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
 
 use danielsonsilva\FindMe\FindMe;
+use Vectorface\Whip\Whip;
 
 define('DS', DIRECTORY_SEPARATOR);
 define('UP', '..');
-define('CITYFILE', __DIR__ . DS . UP . DS . UP . DS . UP . DS . UP . DS . UP . DS . 'etc' . DS . 'citiesinformation.csv');
+define('PATHETC', __DIR__ . DS . UP . DS . UP . DS . UP . DS . UP . DS . UP . DS . 'etc' . DS);
+define('CITYFILE', PATHETC . 'citiesinformation.csv');
+define('PROPERTYFILE', PATHETC . 'properties.xml');
 
 class FindMeController extends BaseController
 {
@@ -41,8 +44,20 @@ class FindMeController extends BaseController
 	public function checkResult()
 	{
 	    $indexCitySelected = $this->request->getVar('citySelect');
+	    $latlon = $this->getLatLongCity($indexCitySelected);
 	    $data = [
 	        'indexCaptured' => $indexCitySelected
+	    ];
+
+	    $findMe = new FindMe($this->getApiId());
+	    $whip = new Whip();
+	    $clientAddress = "177.89.53.143";//$whip->getValidIpAddress();
+	    $findMe->setInformationFromIp($clientAddress);
+
+	    $data = [
+	        'distance' => $findMe->getDistanceTo($latlon['lat'], $latlon['lon']),
+	        'distanceHav' => $findMe->getDistanceToHaversine($latlon['lat'], $latlon['lon'])/1000,
+	        'distanceVic' => $findMe->getDistanceToVicenty($latlon['lat'], $latlon['lon'])/1000
 	    ];
 	    // TODO: https://stackoverflow.com/questions/45116011/generate-a-google-map-link-with-directions-using-latitude-and-longitude
 	    // TODO: https://stackoverflow.com/questions/30544268/create-google-maps-links-based-on-coordinates
@@ -67,4 +82,37 @@ class FindMeController extends BaseController
 	        die($e->getMessage());
 	    }
 	}
+	
+	private function getLatLongCity($index)
+	{
+	    try {
+	        $citiesInformation = [];
+	        $options = [];
+	        $file = fopen(CITYFILE, "r");
+	        $result = [];
+	        $count = 0;
+	        while (($content = fgetcsv($file)) !== FALSE) {
+	            if ($count == $index) {
+	                $result = [
+	                    'lat' => $content[2],
+	                    'lon' => $content[3]
+	                ];
+	                break;
+	            }
+	            $count++;
+	        }
+	        return $result;
+	    } catch (Exception $e) {
+	        die($e->getMessage());
+	    }
+	}
+	
+	private function getApiId()
+	{
+	    if (file_exists(PROPERTYFILE)) {
+	        $xml = simplexml_load_file(PROPERTYFILE);
+	    }
+	    return $xml->property[0]->id;
+	}
+	
 }
