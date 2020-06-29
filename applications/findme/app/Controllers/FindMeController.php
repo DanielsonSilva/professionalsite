@@ -51,16 +51,17 @@ class FindMeController extends BaseController
 
 	    $findMe = new FindMe($this->getApiId());
 	    $whip = new Whip();
-	    $clientAddress = "177.89.53.143";//$whip->getValidIpAddress();
+	    $whip->getValidIpAddress();
 	    $findMe->setInformationFromIp($clientAddress);
 
+	    $googleMapsLink = 'https://www.google.com/maps/dir/?api=1&origin=%s,%s&destination=%s,%s';
+	    $googleMapsLink = sprintf($googleMapsLink, $findMe->getLatitude(), $findMe->getLongitude(), $latlon['lat'], $latlon['lon']);
 	    $data = [
 	        'distance' => $findMe->getDistanceTo($latlon['lat'], $latlon['lon']),
 	        'distanceHav' => $findMe->getDistanceToHaversine($latlon['lat'], $latlon['lon'])/1000,
-	        'distanceVic' => $findMe->getDistanceToVicenty($latlon['lat'], $latlon['lon'])/1000
+	        'distanceVic' => $findMe->getDistanceToVicenty($latlon['lat'], $latlon['lon'])/1000,
+	        'googleMapsLink' => $googleMapsLink
 	    ];
-	    // TODO: https://stackoverflow.com/questions/45116011/generate-a-google-map-link-with-directions-using-latitude-and-longitude
-	    // TODO: https://stackoverflow.com/questions/30544268/create-google-maps-links-based-on-coordinates
 	    return view('result', $data);
 	}
 	

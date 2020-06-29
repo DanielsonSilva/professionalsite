@@ -2,18 +2,21 @@
 
 <?= $this->section('content') ?>
 	<?php echo form_open('FindMeController/checkResult'); ?>
-	<div class="row">
-		<div class="col-6" id="labelSelect">
+	<div class="row justify-content-md-center">
+		<div class="col-6 text-center" id="labelSelect">
 			Select the city:
 		</div>
-		<div class="col-2" id="citySelect">
+	</div>
+	<div class="row justify-content-md-center">
+		<div class="col-6 text-center" id="citySelect">
 			<?php echo form_dropdown('citySelect', $cities, 0, $configSelect); ?>
 		</div>
-		<div class="col-4"></div>
 	</div>
-	<div class="row justify-content-center" id="confirm-button">
-		<div class="col text-center">
+	<div class="row justify-content-md-center" id="confirm-button">
+		<div class="col-3"></div>
+		<div class="col-6 text-center">
 			<?php echo form_button($buttonData); ?>
-		</div>		
+		</div>
+		<div class="col-3"></div>		
 	</div>
 <?= $this->endSection() ?>

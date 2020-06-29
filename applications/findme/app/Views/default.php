@@ -28,7 +28,7 @@
 
 <!-- HEADER: TITLE -->
 <nav class="navbar navbar-light bg-light">
-	<a class="navbar-brand mx-auto" href="#">
+	<a class="navbar-brand mx-auto" href="<?= base_url() ?>">
     	<img src="<?= base_url("assets/images/favicon.png") ?>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     How Far Am I?
   </a>
