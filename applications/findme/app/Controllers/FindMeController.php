@@ -50,8 +50,7 @@ class FindMeController extends BaseController
 	    ];
 
 	    $findMe = new FindMe($this->getApiId());
-	    $whip = new Whip();
-	    $whip->getValidIpAddress();
+	    $clientAddress = $this->request->getIPAddress();
 	    $findMe->setInformationFromIp($clientAddress);
 
 	    $googleMapsLink = 'https://www.google.com/maps/dir/?api=1&origin=%s,%s&destination=%s,%s';

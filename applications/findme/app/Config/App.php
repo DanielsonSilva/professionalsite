@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost/professionalsite/findme/';
+	public $baseURL = 'http://danielsonsilva.tech/findme/';
 
 	/*
 	|--------------------------------------------------------------------------
