@@ -13,3 +13,10 @@ composer.lock
 /.settings/
 .buildpath
 .project
+/sharetodo/.env
+/applications/sharetodo/var/*
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
