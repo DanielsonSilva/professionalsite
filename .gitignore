@@ -10,6 +10,9 @@ composer.lock
 /applications/diceroller/.env
 /applications/findme/.env
 /applications/findme/writable/*
+/applications/capturepokemon/.env
+/applications/capturepokemon/writable/
+/applications/capturepokemon/writable/*
 /.settings/
 .buildpath
 .project
@@ -20,3 +23,8 @@ composer.lock
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

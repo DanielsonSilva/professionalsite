@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Dice Roller</title>
-	<meta name="description" content="The dice roller for your rolls">
+	<title>Pokemon Capture Game</title>
+	<meta name="description" content="Pokemon Capture Game">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- BROWSER ICON -->
@@ -31,37 +31,38 @@
 <!-- HEADER: TITLE -->
 <header>
 	<div class="heroe">
-		<h1>Welcome to the Dice Roller</h1>
-		<h2>Choose the dice and let the destiny decide your fate</h2>
+		<h1>Pokemon Capture Game</h1>
+		<h2>Choose the direction for "The Player" to take and see how many Pokemon you'll get!</h2>
 	</div>
 </header>
 
 <!-- CONTENT -->
 <section>
-	<h1>Pick which dice would you roll:</h1>
+	<h1>Pick which direction would you like to go:</h1>
 
-    <button type="button" class="btn btn-dark" name="die" value="4">d4</button>
-    <button type="button" class="btn btn-dark" name="die" value="6">d6</button>
-    <button type="button" class="btn btn-dark" name="die" value="8">d8</button>
-    <button type="button" class="btn btn-dark" name="die" value="10">d10</button>
-    <button type="button" class="btn btn-dark" name="die" value="12">d12</button>
-    <button type="button" class="btn btn-dark" name="die" value="20">d20</button>
+    <button type="button" class="btn btn-dark" name="direction" value="N">North</button>
+    <button type="button" class="btn btn-dark" name="direction" value="E">East</button>
+    <button type="button" class="btn btn-dark" name="direction" value="O">West</button>
+    <button type="button" class="btn btn-dark" name="direction" value="S">South</button>
 
     <button type="button" class="btn btn-danger" name="reset">Reset</button>
 
     <br />
-
-    <span id="current-roll"></span>
-
     <br />
 
-    <button type="button" class="btn btn-primary" name="roll">
-        Roll that dice!
+    <span id="current-direction"></span>
+
+    <br />
+    <br />
+
+    <button type="button" class="btn btn-primary" name="goDirection">
+        Catch'em all!
     </button>
 
     <br />
+    <br />
 
-    <span id="roll-result"></span>
+    <span id="movement-result"></span>
 
     <br />
 
